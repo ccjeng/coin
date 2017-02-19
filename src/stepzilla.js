@@ -310,6 +310,7 @@ export default class StepZilla extends Component {
                   className="btn btn-next btn-primary btn-lg pull-right"
                   onClick={() => {this.next()}}>{this.state.nextStepText}</button>
         </div>
+
       </div>
     );
   }

@@ -7,7 +7,7 @@ import React, { Component, PropTypes } from 'react';
 function printAry(ary) {
   var strAry ='';
   for (var i = 0; i < ary.length; i++) {
-    strAry = strAry + ary[i] + ' - ';
+    strAry = strAry + ary[i] + ', ';
   }
 
   //console.log(strAry);

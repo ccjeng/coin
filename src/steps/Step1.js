@@ -21,6 +21,7 @@ var coins = [{ id: 1, img: d1 }
     , { id: 500, img: d500 }
     , { id: 1000, img: d1000 }];
 
+
 function imageFormatter(cell, row){
       return (<img style={{height:60}} src={cell}/>);
 };
@@ -72,19 +73,34 @@ export default class Step1 extends Component {
 
     };
 
+    const onRowSelectAll = (isSelected) => {
+
+      ary = [];
+
+      if (isSelected) {
+        for (var i = 0; i < coins.length; i++) {
+          ary.push(coins[i].id);
+        }
+      } 
+
+      this.props.updateStore({selectedCoins:ary.sort()});
+    };
+
     const selectRowProp = {
       mode: 'checkbox',
       clickToSelect: true,
-      onSelect: onRowSelect
+      onSelect: onRowSelect,
+      onSelectAll: onRowSelectAll,
+      selected: ary
     };
 
     return (
       <div className="step step1">
         <div className="row">
-          <form id="Form" className="form-horizontal">
-            <div className="col-md-12">
+          <form id="Form" className="form-inline">
+            <div className="col-md-6">
               <BootstrapTable data={ coins } hover selectRow={ selectRowProp }>
-                  <TableHeaderColumn dataField='id' isKey width='90'></TableHeaderColumn>
+                  <TableHeaderColumn dataField='id' isKey width='90' hidden></TableHeaderColumn>
                   <TableHeaderColumn dataField='img' dataFormat={imageFormatter}></TableHeaderColumn>
               </BootstrapTable>
             </div>
