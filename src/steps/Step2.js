@@ -92,14 +92,14 @@ export default class Step2 extends Component {
 
     return  {
       amountVal: (data.amount != 0), // required: anything besides N/A
-      coinCount: (data.coinCount < 100)
+      coinCount: (data.coinCount < 100 && data.coinCount > 0)
     }
   }
 
   _validationErrors(val) {
     const errMsgs = {
       amountValMsg: val.amountVal ? '' : '請輸入金額!',
-      coinCountMsg: val.coinCount ? '' : '超過100種組合，請縮小條件!'
+      coinCountMsg: val.coinCount ? '' : '超過100種組合或沒有結果，請重新選擇條件!'
     }
     return errMsgs;
   }

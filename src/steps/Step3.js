@@ -55,7 +55,7 @@ function generateCombinations(total, coins) {
 
     //let coins = [1,5,10,50,100,500,1000];
     let count = 0;
-
+    resultString = '';
     for (let a = 0; a <= total/coins[coins.length-7]; a++) {
       for (let b = 0; b <= total/coins[coins.length-6]; b++) {
         for (let c = 0; c <= total/coins[coins.length-5]; c++) {
