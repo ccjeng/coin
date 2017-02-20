@@ -13,7 +13,7 @@ import d500 from '../img/d500.jpeg';
 import d1000 from '../img/d1000.jpeg';
 
 
-var coins = [{ id: 1, img: d1 }
+let coins = [{ id: 1, img: d1 }
     , { id: 5, img: d5 }
     , { id: 10, img: d10 }
     , { id: 50, img: d50 }
@@ -24,6 +24,7 @@ var coins = [{ id: 1, img: d1 }
 
 function imageFormatter(cell, row){
       return (<img style={{height:60}} src={cell}/>);
+
 };
 
 
@@ -38,7 +39,7 @@ Array.prototype.remove = function() {
     return this;
 };
 
-var ary = [];
+let ary = [];
 
 export default class Step1 extends Component {
   constructor(props) {
@@ -95,10 +96,10 @@ export default class Step1 extends Component {
     };
 
     return (
-      <div className="step step1">
+      <div className="step step1 container">
         <div className="row">
           <form id="Form" className="form-inline">
-            <div className="col-md-6">
+            <div className="col-md-4 col-md-offset-4">
               <BootstrapTable data={ coins } hover selectRow={ selectRowProp }>
                   <TableHeaderColumn dataField='id' isKey width='90' hidden></TableHeaderColumn>
                   <TableHeaderColumn dataField='img' dataFormat={imageFormatter}></TableHeaderColumn>

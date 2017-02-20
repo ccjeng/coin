@@ -5,23 +5,23 @@ import React, { Component, PropTypes } from 'react';
 
 function coinCounts(total, coins){
 
-    var cLen = coins.length,
+    let cLen = coins.length,
     matrix = Array(cLen),
     mLen = matrix.length,
     prevPerms;
 
-    for(var x = 0; x <= mLen; x++){
+    for(let x = 0; x <= mLen; x++){
         matrix[x] = Array(total+1);
     }
 
-    for(var z = 0; z <= mLen; z++){
+    for(let z = 0; z <= mLen; z++){
         matrix[z][0] = 1;
     }
 
     //now the fun starts!
-    for(var a = 1; a <= cLen; a++){
+    for(let a = 1; a <= cLen; a++){
 
-        for(var b = 1; b <= total; b++){
+        for(let b = 1; b <= total; b++){
 
             matrix[0][b] = 0;
             prevPerms = matrix[a-1][b];
@@ -39,7 +39,8 @@ export default class Step2 extends Component {
 
     this.state = {
       amount: props.getStore().amount,
-      selectedCoins: props.getStore().selectedCoins
+      selectedCoins: props.getStore().selectedCoins,
+      estimatedCoinCount: props.getStore().estimatedCoinCount
     };
 
     this._validateOnDemand = true;
@@ -86,17 +87,19 @@ export default class Step2 extends Component {
 
    _validateData(data) {
 
-    console.log('data.coinCount = ' + data.coinCount);
+    //console.log('data.coinCount = ' + data.coinCount);
+    this.props.updateStore({estimatedCoinCount:data.coinCount});
+
     return  {
       amountVal: (data.amount != 0), // required: anything besides N/A
-      coinCount: (data.coinCount < 1000)
+      coinCount: (data.coinCount < 100)
     }
   }
 
   _validationErrors(val) {
     const errMsgs = {
       amountValMsg: val.amountVal ? '' : '請輸入金額!',
-      coinCountMsg: val.coinCount ? '' : '請縮小條件!'
+      coinCountMsg: val.coinCount ? '' : '超過100種組合，請縮小條件!'
     }
     return errMsgs;
   }
@@ -134,11 +137,11 @@ export default class Step2 extends Component {
     }
 
     return (
-    <div className="step step2">
+    <div className="step step2 container">
       <div className="row">
         <form id="Form" className="form-inline">
           <div className="form-group">
-            <input ref="amount" className="form-control col-sm-10" placeholder="輸入金額"
+            <input ref="amount" className="form-control" placeholder="輸入金額"
                                                 defaultValue={this.state.amount}
                                                 type="number" required onBlur={this.validationCheck}
                                                 />

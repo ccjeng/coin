@@ -1,6 +1,8 @@
 import React, { Component, PropType } from 'react';
-import './App.css';
+import './css/App.css';
 import './css/react-bootstrap-table-all.min.css';
+import './css/stepzilla.css';
+
 //import StepZilla from 'react-stepzilla';
 import StepZilla from './stepzilla.js'
 
@@ -18,7 +20,8 @@ class App extends Component {
 
     this.store = {
       amount: 0,
-      selectedCoins: []
+      selectedCoins: [],
+      estimatedCoinCount: 0
     };
   }
 
