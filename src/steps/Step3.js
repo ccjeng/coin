@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-
+import CustomResultTable from '../CustomResultTable.jsx'
 
 function printAry(ary) {
 
@@ -49,6 +49,7 @@ function generateCoinArray(ary) {
   return newAry;
 };
 
+
 let resultAry = [];
 let resultString = '';
 function generateCombinations(total, coins) {
@@ -69,17 +70,17 @@ function generateCombinations(total, coins) {
                           g*coins[coins.length-1];
                   if(z == total) {        
                     count++;
-                    let ary = [];
-                    ary.push(a);
-                    ary.push(b);
-                    ary.push(c);
-                    ary.push(d);
-                    ary.push(e);
-                    ary.push(f);
-                    ary.push(g);
                     console.log(a+'-'+b+'-'+c+'-'+d+'-'+e+'-'+f+'-'+g);
-                    resultString = resultString + a+'-'+b+'-'+c+'-'+d+'-'+e+'-'+f+'-'+g + ', ';
-                    resultAry.push(ary);
+                    resultAry.push({
+                        "d1":a,
+                        "d5":b,
+                        "d10":c,
+                        "d50":d,
+                        "d100":e,
+                        "d500":f,
+                        "d1000":g
+                    });
+
                   } else if (z > total) {
                     break;
                   }
@@ -131,13 +132,12 @@ export default class Step3 extends Component {
 
 
             <div>
-              {this.props.getStore().amount}
+              {this.props.getStore().amount}            
             </div>
 
             <div>
-              {resultString}
+              <CustomResultTable resultAry={resultAry}/>
             </div>
-
           </form>
         </div>
       </div>
