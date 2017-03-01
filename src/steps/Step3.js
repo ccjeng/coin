@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-import CustomResultTable from '../CustomResultTable.jsx'
+import CustomResultTable from '../module/CustomResultTable.jsx'
 
 function printAry(ary) {
 
@@ -57,6 +57,7 @@ function generateCombinations(total, coins) {
     //let coins = [1,5,10,50,100,500,1000];
     let count = 0;
     resultString = '';
+    resultAry = [];
     for (let a = 0; a <= total/coins[coins.length-7]; a++) {
       for (let b = 0; b <= total/coins[coins.length-6]; b++) {
         for (let c = 0; c <= total/coins[coins.length-5]; c++) {
