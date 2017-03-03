@@ -1,4 +1,14 @@
 import React from 'react'
+import CustomResultCell from '../module/CustomResultCell.jsx'
+
+import img1 from '../img/d1.jpg';
+import img5 from '../img/d5.jpg';
+import img10 from '../img/d10.jpg';
+import img50 from '../img/d50.jpg';
+import img100 from '../img/d100.jpeg';
+import img500 from '../img/d500.jpeg';
+import img1000 from '../img/d1000.jpeg';
+
 
 export default class CustomResultTable extends React.Component {
     constructor(props){
@@ -14,7 +24,7 @@ export default class CustomResultTable extends React.Component {
     render() {
         return (
             <center>
-               <Tbody data={this.state.data}/><br/>               
+               <TableBody data={this.state.data}/><br/>               
             </center>
         )
     }
@@ -24,7 +34,7 @@ export default class CustomResultTable extends React.Component {
  * tbody
  * 關鍵點是使用props來傳遞單向數據流。通過遍歷從`props傳來的數據data`生成表格的每一行數據
  */
-class Tbody extends React.Component{
+class TableBody extends React.Component{
     render() {
         return (
             <div>
@@ -48,20 +58,19 @@ class Item extends React.Component{
         var data = this.props.data;
 
         return (
-        	<tbody>
             <table className='table table-bordered'>
                     <thead>
                     <tr>
-                        <th className={data.d1000===0 ?'hidden':'text-center'}>壹仟</th>
-                        <th className={data.d500===0 ?'hidden':'text-center'}>伍佰</th>
-                        <th className={data.d100===0 ?'hidden':'text-center'}>壹佰</th>
-                        <th className={data.d50===0 ?'hidden':'text-center'}>伍拾</th>
-                        <th className={data.d10===0 ?'hidden':'text-center'}>拾圓</th>
-                        <th className={data.d5==0 ?'hidden':'text-center'}>伍圓</th>
-                        <th className={data.d1===0 ?'hidden':'text-center'}>壹圓</th>                        
+                        <th className={data.d1000===0 ?'hidden':'text-center'}><img src={img1000}/></th>
+                        <th className={data.d500===0 ?'hidden':'text-center'}><img src={img500}/></th>
+                        <th className={data.d100===0 ?'hidden':'text-center'}><img src={img100}/></th>
+                        <th className={data.d50===0 ?'hidden':'text-center'}><img src={img50}/></th>
+                        <th className={data.d10===0 ?'hidden':'text-center'}><img src={img10}/></th>
+                        <th className={data.d5==0 ?'hidden':'text-center'}><img src={img5}/></th>
+                        <th className={data.d1===0 ?'hidden':'text-center'}><img src={img1}/></th>                        
                     </tr>
                     </thead>
-		            <tr key={index}>
+		            <tr key='1'>
 		                <td className={data.d1000===0 ?'hidden':'text-center'}>{data.d1000}</td>
 		                <td className={data.d500===0 ?'hidden':'text-center'}>{data.d500}</td>
 		                <td className={data.d100===0 ?'hidden':'text-center'}>{data.d100}</td>
@@ -70,8 +79,16 @@ class Item extends React.Component{
 		                <td className={data.d5===0 ?'hidden':'text-center'}>{data.d5}</td>
 		                <td className={data.d1===0 ?'hidden':'text-center'}>{data.d1}</td>		                
 		            </tr>
-		    </table>  
-		    </tbody>      
+                    <tr key='2'>
+                        <td className={data.d1000===0 ?'hidden':'text-center'}><CustomResultCell type='d1000' number={data.d1000}/></td>
+                        <td className={data.d500===0 ?'hidden':'text-center'}><CustomResultCell type='d500' number={data.d500}/></td>
+                        <td className={data.d100===0 ?'hidden':'text-center'}><CustomResultCell type='d100' number={data.d100}/></td>
+                        <td className={data.d50===0 ?'hidden':'text-center'}><CustomResultCell type='d50' number={data.d50}/></td>
+                        <td className={data.d10===0 ?'hidden':'text-center'}><CustomResultCell type='d10' number={data.d10}/></td>
+                        <td className={data.d5===0 ?'hidden':'text-center'}><CustomResultCell type='d5' number={data.d5}/></td>
+                        <td className={data.d1===0 ?'hidden':'text-center'}><CustomResultCell type='d1' number={data.d1}/></td>                      
+                    </tr>
+		    </table>      
         )
     }
 }

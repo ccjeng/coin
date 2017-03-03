@@ -127,13 +127,13 @@ export default class Step3 extends Component {
   render() {
     
     return (
-      <div className="step step3">
+      <div className="step step3 container">
         <div className="row">
           <form id="Form" className="form-horizontal">
 
 
             <div>
-              {this.props.getStore().amount}            
+              金額 {this.props.getStore().amount} 元的組合          
             </div>
 
             <div>

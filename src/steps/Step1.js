@@ -23,7 +23,7 @@ let coins = [{ id: 1, img: d1 }
 
 
 function imageFormatter(cell, row){
-      return (<img style={{height:60}} src={cell}/>);
+      return (<img style={{height: 60}} src={cell}/>);
 
 };
 

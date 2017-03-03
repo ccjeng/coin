@@ -5,6 +5,35 @@ body {
 }
 
 
-hidden {	
+.hidden {	
     display:none;
 }
+
+
+.step1 img {
+	height: 60px;
+}
+
+/*
+.step2 input {
+	border:10px;
+}*/
+
+.step3 table {
+	border:3px #cccccc solid;
+}
+
+
+.step3 tr td {
+	max-width: 500px;
+	border:1px solid #aaa;
+}
+
+.step3 th img {
+	height: 60px;
+}
+
+.step3 td img {
+	height: 40px;
+}
+
