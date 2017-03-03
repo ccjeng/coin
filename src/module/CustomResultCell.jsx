@@ -48,7 +48,7 @@ export default class CustomResultCell extends React.Component {
 
     	let images = [];
     	for(let i=0; i<this.props.number; i++) {
-    		images.push(<img src={imgType}/>);
+    		images.push(<img src={imgType} key={i}/>);
     	}
 
         return (

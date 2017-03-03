@@ -35,5 +35,6 @@ body {
 
 .step3 td img {
 	height: 40px;
+	border:2px white solid;
 }
 

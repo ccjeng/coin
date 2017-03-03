@@ -52,10 +52,12 @@ function generateCoinArray(ary) {
 
 let resultAry = [];
 let resultString = '';
-function generateCombinations(total, coins) {
+function generateCombinations(total, coins, estimatedCoinCount) {
 
     //let coins = [1,5,10,50,100,500,1000];
     let count = 0;
+    let actualCount = estimatedCoinCount;
+
     resultString = '';
     resultAry = [];
     for (let a = 0; a <= total/coins[coins.length-7]; a++) {
@@ -72,7 +74,15 @@ function generateCombinations(total, coins) {
                   if(z == total) {        
                     count++;
                     console.log(a+'-'+b+'-'+c+'-'+d+'-'+e+'-'+f+'-'+g);
-                    resultAry.push({
+                    /*
+                    if(a<0 && b<20 && c<20 && d<20 && e<20 && f<20 && g<20){
+                    } else
+                      actualCount--;
+                    }*/
+
+                    if(a<20 && b<20 && c<20 && d<20 && e<20 && f<20 && g<20) {
+
+                        resultAry.push({
                         "d1":a,
                         "d5":b,
                         "d10":c,
@@ -80,7 +90,13 @@ function generateCombinations(total, coins) {
                         "d100":e,
                         "d500":f,
                         "d1000":g
-                    });
+                      });
+                    } else {
+                      //skip
+                       console.log('skip ->'+a+'-'+b+'-'+c+'-'+d+'-'+e+'-'+f+'-'+g);
+
+                    }
+                  
 
                   } else if (z > total) {
                     break;
@@ -115,7 +131,7 @@ export default class Step3 extends Component {
     const finalAry = generateCoinArray(this.props.getStore().selectedCoins);
     strAry = printAry(finalAry);
     console.log('amount = ' + this.props.getStore().amount);
-    generateCombinations(this.props.getStore().amount, finalAry);
+    generateCombinations(this.props.getStore().amount, finalAry, this.props.getStore().estimatedCoinCount);
 
   }
 

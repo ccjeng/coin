@@ -13,9 +13,6 @@ import img1000 from '../img/d1000.jpeg';
 export default class CustomResultTable extends React.Component {
     constructor(props){
         super(props);
-
-        //var aa = this.props.resultAry;
-        //console.log('length = ' + aa[0].d10);
         this.state = {
             data: this.props.resultAry
         }
@@ -39,7 +36,7 @@ class TableBody extends React.Component{
         return (
             <div>
 	            {this.props.data.map(function (coins, index) {
-	                return <Item data={coins} index={index}/>
+	                return <Item data={coins} index={index} key={index}/>
 	            })}
             </div>
             
@@ -50,7 +47,6 @@ class TableBody extends React.Component{
  * td
  * 每一行都需設置unique "key" prop
  */
-
 
 class Item extends React.Component{
     render() {
