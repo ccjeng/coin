@@ -1,14 +1,21 @@
 import React from 'react'
 import CustomResultCell from '../module/CustomResultCell.jsx'
-
+/*
 import img1 from '../img/d1.jpg';
 import img5 from '../img/d5.jpg';
 import img10 from '../img/d10.jpg';
 import img50 from '../img/d50.jpg';
 import img100 from '../img/d100.jpeg';
 import img500 from '../img/d500.jpeg';
-import img1000 from '../img/d1000.jpeg';
+import img1000 from '../img/d1000.jpeg';*/
 
+const img1 = process.env.PUBLIC_URL + '/img/d1.jpg';
+const img5 = process.env.PUBLIC_URL + '/img/d5.jpg';
+const img10 = process.env.PUBLIC_URL + '/img/d10.jpg';
+const img50 = process.env.PUBLIC_URL + '/img/d50.jpg';
+const img100 = process.env.PUBLIC_URL + '/img/d100.jpeg';
+const img500 = process.env.PUBLIC_URL + '/img/d500.jpeg';
+const img1000 = process.env.PUBLIC_URL + '/img/d1000.jpeg';
 
 export default class CustomResultTable extends React.Component {
     constructor(props){
@@ -37,7 +44,7 @@ class TableBody extends React.Component{
             <div>
 	            {this.props.data.map(function (coins, index) {
 	                return <Item data={coins} index={index} key={index}/>
-	            })}
+	            })}               
             </div>
             
         )
@@ -54,9 +61,10 @@ class Item extends React.Component{
         var data = this.props.data;
 
         return (
+        <div>
             <table className='table table-bordered'>
                     <thead>
-                    <tr>
+                    <tr key='0'>
                         <th className={data.d1000===0 ?'hidden':'text-center'}><img src={img1000}/></th>
                         <th className={data.d500===0 ?'hidden':'text-center'}><img src={img500}/></th>
                         <th className={data.d100===0 ?'hidden':'text-center'}><img src={img100}/></th>
@@ -84,7 +92,8 @@ class Item extends React.Component{
                         <td className={data.d5===0 ?'hidden':'text-center'}><CustomResultCell type='d5' number={data.d5}/></td>
                         <td className={data.d1===0 ?'hidden':'text-center'}><CustomResultCell type='d1' number={data.d1}/></td>                      
                     </tr>
-		    </table>      
+		    </table> <br/><br/>
+            </div>     
         )
     }
 }

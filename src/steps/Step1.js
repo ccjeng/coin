@@ -3,15 +3,22 @@
 import React, { Component, PropTypes } from 'react';
 
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-
+/*
 import d1 from '../img/d1.jpg';
 import d5 from '../img/d5.jpg';
 import d10 from '../img/d10.jpg';
 import d50 from '../img/d50.jpg';
 import d100 from '../img/d100.jpeg';
 import d500 from '../img/d500.jpeg';
-import d1000 from '../img/d1000.jpeg';
+import d1000 from '../img/d1000.jpeg';*/
 
+const d1 = process.env.PUBLIC_URL + '/img/d1.jpg';
+const d5 = process.env.PUBLIC_URL + '/img/d5.jpg';
+const d10 = process.env.PUBLIC_URL + '/img/d10.jpg';
+const d50 = process.env.PUBLIC_URL + '/img/d50.jpg';
+const d100 = process.env.PUBLIC_URL + '/img/d100.jpeg';
+const d500 = process.env.PUBLIC_URL + '/img/d500.jpeg';
+const d1000 = process.env.PUBLIC_URL + '/img/d1000.jpeg';
 
 let coins = [{ id: 1, img: d1 }
     , { id: 5, img: d5 }
@@ -22,7 +29,8 @@ let coins = [{ id: 1, img: d1 }
     , { id: 1000, img: d1000 }];
 
 
-function imageFormatter(cell, row){
+
+function imageFormatter(cell, row){  
       return (<img style={{height: 60}} src={cell}/>);
 
 };

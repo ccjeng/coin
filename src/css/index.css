@@ -23,10 +23,10 @@ body {
 	border:3px #cccccc solid;
 }
 
-
 .step3 tr td {
 	max-width: 500px;
 	border:1px solid #aaa;
+	font-size:large;
 }
 
 .step3 th img {
@@ -34,7 +34,8 @@ body {
 }
 
 .step3 td img {
-	height: 40px;
+	height: 45px;
 	border:2px white solid;
 }
+
 

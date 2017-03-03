@@ -80,7 +80,7 @@ function generateCombinations(total, coins, estimatedCoinCount) {
                       actualCount--;
                     }*/
 
-                    if(a<20 && b<20 && c<20 && d<20 && e<20 && f<20 && g<20) {
+                    //if(a<20 && b<20 && c<20 && d<20 && e<20 && f<20 && g<20) {
 
                         resultAry.push({
                         "d1":a,
@@ -91,11 +91,11 @@ function generateCombinations(total, coins, estimatedCoinCount) {
                         "d500":f,
                         "d1000":g
                       });
-                    } else {
+                   /* } else {
                       //skip
                        console.log('skip ->'+a+'-'+b+'-'+c+'-'+d+'-'+e+'-'+f+'-'+g);
 
-                    }
+                    }*/
                   
 
                   } else if (z > total) {
