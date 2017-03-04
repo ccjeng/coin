@@ -13,3 +13,8 @@ npm install
 
 ## Site
 https://coin.ccjeng.com/
+
+## Reference
+- [Stackoverflow](http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value)
+- [Samples on rosettacode.org](http://rosettacode.org/wiki/Count_the_coins)
+- [Samples for Frobenius problem](http://codeoverdose.com/category/javascript/)
