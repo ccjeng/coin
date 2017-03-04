@@ -1,16 +1,8 @@
 'use strict';
 
 import React, { Component, PropTypes } from 'react';
-
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-/*
-import d1 from '../img/d1.jpg';
-import d5 from '../img/d5.jpg';
-import d10 from '../img/d10.jpg';
-import d50 from '../img/d50.jpg';
-import d100 from '../img/d100.jpeg';
-import d500 from '../img/d500.jpeg';
-import d1000 from '../img/d1000.jpeg';*/
+
 
 const d1 = process.env.PUBLIC_URL + '/img/d1.jpg';
 const d5 = process.env.PUBLIC_URL + '/img/d5.jpg';

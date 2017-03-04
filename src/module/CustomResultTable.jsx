@@ -1,13 +1,5 @@
 import React from 'react'
 import CustomResultCell from '../module/CustomResultCell.jsx'
-/*
-import img1 from '../img/d1.jpg';
-import img5 from '../img/d5.jpg';
-import img10 from '../img/d10.jpg';
-import img50 from '../img/d50.jpg';
-import img100 from '../img/d100.jpeg';
-import img500 from '../img/d500.jpeg';
-import img1000 from '../img/d1000.jpeg';*/
 
 const img1 = process.env.PUBLIC_URL + '/img/d1.jpg';
 const img5 = process.env.PUBLIC_URL + '/img/d5.jpg';
