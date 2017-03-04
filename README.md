@@ -1,5 +1,5 @@
 # Coin Combination Teaching Site
-This is a mathematics teaching site, to teach students coin & cash combinations. It is using TWD, but you can change to any currency by modifying the code.
+This is a mathematics teaching site. The purpose of this site is to teach students the concept of using money (coin & cash combinations). The currency is using TWD, but you can change to any currency by modifying the code.
 
 ## Installation
 - Install [create-react-app](https://github.com/facebookincubator/create-react-app)
