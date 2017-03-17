@@ -99,7 +99,7 @@ export default class Step2 extends Component {
   _validationErrors(val) {
     const errMsgs = {
       amountValMsg: val.amountVal ? '' : '請輸入金額!',
-      coinCountMsg: val.coinCount ? '' : '組合結果太多或沒有結果，請重新選擇條件!'
+      coinCountMsg: val.coinCount ? '' : '組合結果太多或沒有結果，請重新選擇條件! (共有' + this.props.getStore().estimatedCoinCount + '種組合)'
     }
     return errMsgs;
   }
